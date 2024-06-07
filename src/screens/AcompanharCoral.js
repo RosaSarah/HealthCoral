@@ -75,5 +75,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         // Espessura do texto (negrito)
         fontWeight: "600"
-    }
+    },
+
+    instrucoes:{
+        backgroundColor: 'white',
+        borderWidth: 1,
+        borderColor:'#595656',
+        borderStyle: 'solid',
+        borderRadius: 10,
+        padding: 15,
+        gap: 3,
+
+    },
+
 })
