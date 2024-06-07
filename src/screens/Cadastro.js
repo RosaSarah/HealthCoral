@@ -34,7 +34,7 @@ export function Cadastro ({ navigation }) {
                     <Text style={styles.erro}>Tente novamente</Text>
                 </View>    
             ) : (
-            <Text style={styles.titulo}></Text>
+            <Text style={styles.titulo}>Cadastro</Text>
 
             )}
 
@@ -58,6 +58,7 @@ export function Cadastro ({ navigation }) {
 
             .catch(error => setErro(error.errors[0]))
 
+            
             }}>Enviar</Button>
         </View>
     )
@@ -80,5 +81,11 @@ const styles = StyleSheet.create({
         fontSize: 24,
         // Espessura do texto (negrito)
         fontWeight: "600"
-    }
+    },
+    erro: {
+        color: "red",
+    fontWeight: "600",
+    fontSize: 15,  
+    textAlign :"center"
+    }    
 })
