@@ -34,7 +34,7 @@ export function Cadastro ({ navigation }) {
                     <Text style={styles.erro}>Tente novamente</Text>
                 </View>    
             ) : (
-            <Text style={styles.titulo}>Bem-Vindo!</Text>
+            <Text style={styles.titulo}></Text>
 
             )}
 

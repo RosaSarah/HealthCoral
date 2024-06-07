@@ -36,7 +36,7 @@ export function AcompanharCoral({navigation}) {
                 .then(response=>setDadosCoral(response.data))
                 .catch(()=>setErro ('Coral não encontrado'))
 
-            }} >Vizualizar</Button>
+            }} >Obter dados</Button>
 
             {erro ?(
                 <Text>
@@ -46,12 +46,11 @@ export function AcompanharCoral({navigation}) {
             ) : null}
 
             {dadosCoral ? (
-                <View>
-                    <Text>
+                <View style={styles.instrucoes}> 
+                    <Text> Nome = {dadosCoral.nome} </Text>
+                    <Text> Descrição = {dadosCoral.descricao} </Text>     
                         
-                        Data de inicio: {dayjs( dadosSafra.dataInicio)
-                        .format('DD/MM/YYYY')} 
-                    </Text>
+                    
                 </View>
             ) : null}
 

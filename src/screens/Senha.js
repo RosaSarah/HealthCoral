@@ -94,6 +94,13 @@ const styles = StyleSheet.create({
         padding: 15,
         gap: 3,
 
+    },
+        erro: {
+            color: "red",
+           fontWeight: "600",
+           fontSize: 15,  
+           textAlign :"center"
+         }    
 
-    }
+    
 })

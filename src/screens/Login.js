@@ -5,6 +5,7 @@ import * as yup from 'yup'
 import Logo from '../../assets/Logo.png'
 import { useState } from "react";
 import {api} from "../services/api"
+import React from "react";
 
 export function Login({ navigation }) {
     const [email, setEmail] = useState ('')
@@ -16,6 +17,8 @@ export function Login({ navigation }) {
         senha: yup.string().min(8, "A senha deve ter no mínimo 8 caracteres!").required("Senha é um campo obrigatório!")
       });
 
+      
+    
     return (
         <View style={styles.login}>
             <Image

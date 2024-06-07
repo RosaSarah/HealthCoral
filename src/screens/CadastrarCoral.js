@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, ToastAndroid } from "react-native";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import Logo from '../../assets/Logo.png'
@@ -13,7 +13,7 @@ export function CadastrarCoral({navigation}) {
     const [descricao, setDescricao] =useState('')
     const [camera, setCamera] =useState('')
     const [dadosCoral, setDadosCoral] =useState('')
-    const [idCoral, setIdCoral] =useState('')
+    const [idCoral, setIdCoral] = useState('')
     const [erro, setErro] =useState('')
     return (
         
@@ -31,8 +31,8 @@ export function CadastrarCoral({navigation}) {
 
             <Text style={styles.titulo}>Cadastro de Coral </Text>
 
-            <Input placeholder="Id:"
-            value={idCoral} onChangeText={setIdCoral} />
+            <Input placeholder = "id:"
+            value= {idCoral} onChangeText={setIdCoral}/>
 
             <Input placeholder="Nome:"
             value={nome} onChangeText={setnome} />
@@ -47,13 +47,15 @@ export function CadastrarCoral({navigation}) {
             value={camera} onChangeText={setCamera} />
             
             <Button onPress={()=>{
+                
+                
                 if(idCoral=='')return setErro('Id inválido')
 
-                api.get('/coral/' + idCoral)
-                .then(response=>{
-                setErro(undefined)
-                setDadosCoral(response.data)})
-                .catch(()=>setErro ('Coral não encontrada'))
+                    api.post('/coral', {
+                        nome,zonaAmbiental, descricao, camera, 
+                        dadosCoral, idCoral,
+                    })
+                    .then(response=>{ToastAndroid.show('Coral cadastrado com sucesso!', ToastAndroid.SHORT);})
 
             }} >Enviar</Button>
 
@@ -64,14 +66,7 @@ export function CadastrarCoral({navigation}) {
     
             ) : null}
 
-            {dadosCoral ? (
-                <View>
-                    <Text>
-                        Nome = {dadosCoral.nome}
-                        
-                    </Text>
-                </View>
-            ) : null}
+            
 
         </View>
     )

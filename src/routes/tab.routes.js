@@ -19,10 +19,10 @@ export default function TabRoutes(){
         <Tab.Screen
                 name = "Login"
                 component= {Login}
-                options={{
-                    tabBarIcon: ({ color, size }) => <Feather name='home' color={color} size={size}/>
-                }}
-            />
+                options={({ route }) => ({
+                    tabBarItemStyle: { display: "none" },
+                  })}
+                />
 
         <Tab.Screen
                 name = "Cadastro"
@@ -57,7 +57,7 @@ export default function TabRoutes(){
                 component= {CadastrarCoral}
                 options={{
                     tabBarItemStyle: { },
-                    tabBarIcon: ({ color, size }) => <Feather name='home' color={color} size={size}/>
+                    tabBarIcon: ({ color, size }) => <Feather name='plus' color={color} size={size}/>
                 }}
             />        
             
@@ -66,7 +66,7 @@ export default function TabRoutes(){
                 component= {AcompanharCoral}
                 options={{
                     tabBarItemStyle: { },
-                    tabBarIcon: ({ color, size }) => <Feather name='home' color={color} size={size}/>
+                    tabBarIcon: ({ color, size }) => <Feather name='search' color={color} size={size}/>
                 }}
             />   
         </Tab.Navigator>
